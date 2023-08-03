@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lexend Deca';
+}
+
+@font-face {
+  font-family: 'bismillah script';
+  src: url(../assets/fonts/bismillah_script/Bismillah\ Script.ttf);
+}
+
+@font-face {
+    font-family: 'Lexend Deca';
+    src: url(../assets/fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf);
+}
+
+/* #display * {
+  border: 0.5px solid rebeccapurple;
+} */
+
+@media (min-width: 720px) {
+
+  #display {
+    background-image: url(../assets/img/adzan_bg/adzan_bg1.jpg);
+    background-size: cover;
+  }
+
+  #display-content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #display-jam {
+    width: 100%;
+    height: 100%;
+    padding: 4vh 5vw;
+    display: flex;
+  }
+
+  #content-jam {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .sekarang {
+    margin-bottom: 20px;
+  }
+  .sekarang::after {
+    content: 'Sekarang:';
+    font-size: 1.5vw;
+    font-weight: 700;
+  }
+
+  .jam-menit {
+    font-size: 5vw;
+    font-weight: bold;
+    line-height: 4vw;
+  }
+  .detik {
+    font-size: 3vw;
+    font-weight: bold;
+  }
+
+  .hari-tanggal {
+    font-size: 1.8vw;
+    display: flex;
+    min-width: 240px;
+  }
+  .hari::after {
+    content: "";
+    margin-right: 4px;
+  }
+  #lokasi-masjid {
+    max-width: 240px;
+  }
+
+  #nama-masjid {
+    font-size: 3vw;
+    font-weight: bold;
+  }
+
+  #wallpaper {
+    width: 80vw;
+    height: 100%;
+    margin-left: 20px;
+  }
+
+  .gambar-slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: -1;
+    border-radius: 40px;
+    overflow: hidden;
+  }
+
+  .gambar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    animation: slideShow 30s linear infinite;
+  }
+  .gambar:first-child {
+    background-image: url(../assets/img/masjid3.jpg);
+  }
+  .gambar:nth-child(2) {
+    background-image: url(../assets/img/masjid2.jpg);
+    animation-delay: 10s;
+  }
+  .gambar:nth-child(3) {
+    background-image: url(../assets/img/masjid1.jpg);
+    animation-delay: 20s;
+  }
+
+  #display-jadwal {
+    width: 100%;
+  }
+
+  #jadwal-content {
+    width: 100%;
+    padding: 4vh 5vw;
+  }
+
+  #jadwal-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 4;
+  }
+
+  .jadwal-item {
+    min-width: 10vw;
+    min-height: 10vh;
+    background-color: orange;
+    border-radius: 20px;
+    padding: 3vh 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 10px 10px 40px 5px rgba(0, 0, 0, .3);
+  }
+
+  .nama-jadwal {
+    font-size: 1.2vw;
+  }
+
+  .angka-jadwal {
+    text-align: center;
+    font-size: 3.6vw;
+    font-weight: bold;
+  }
+
+  #running-text {
+    width: 100%;
+    height: 5vh;
+    background-color: wheat;
+  }
+  #running-text-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .running-text-item {
+    min-width: 100vw;
+    text-align: center;
+    position: absolute;
+    padding: 0 4px;
+    background-color: wheat;
+    white-space: nowrap;
+    animation: marquee-vert 20s linear infinite;
+  }
+  .running-text-item:nth-child(2) {
+    animation-delay: 10s;
+  }
+
+  .fullpage {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    display: none;
+  }
+
+  .alarm {
+    background-image: url(../assets/img/adzan_bg/adzan_bg1.jpg);
+    background-size: cover;
+    background-position: bottom;
+    color: black;
+  }
+
+  #waktunya-adzan {
+    font-size: 12vw;
+    font-family: 'bismillah script';
+  }
+  #waktunya-adzan p {
+    opacity: 0;
+    transform: scale(0);
+    transition: 300ms 300ms;
+  }
+
+  .alert {
+    background-color: rgb(172, 0, 0);
+    color: white;
+  }
+
+  #jadwal-belum-disetel {
+    /* display: flex; */
+    font-size: 5vw;
+  }
+  #jadwal-belum-disetel::after {
+    content: "Jadwal belum disetel, harap setel terlebih dahulu sebelum digunakan";
+  }
+
+
+}
+
+@keyframes marquee-vert {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+@keyframes slideShow {
+    0% {
+        opacity: 1;
+        background-position: center;
+    }
+    30% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0;
+        background-position: top;
+    }
+    35% {
+        background-position: center;
+    }
+    99% {
+        opacity: 0;
+        background-position: center;
+    }
+    100% {
+        opacity: 1;
+        background-position: center;
+    }
+}
